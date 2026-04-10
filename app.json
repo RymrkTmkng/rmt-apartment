@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "scheme": "rmt-apartment",
+    "name": "RMT Apartment",
+    "slug": "rmt-apartment",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/rmt-apartment.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/rmt-apartment.png",
+      "resizeMode": "contain",
+      "margin": 0,
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.rmtapartment"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/rmt-apartment.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.rmtapartment"
+    },
+    "web": {
+      "favicon": "./assets/rmt-apartment.png"
+    },
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}
