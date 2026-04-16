@@ -65,7 +65,7 @@ const RootLayout = () => {
               />
             ),
           }}
-        />
+        /> 
       </Tabs>
     </SafeAreaProvider>
   );
