@@ -1,12 +1,26 @@
-import { Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import { useRouter } from 'expo-router';
+import { Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { useRouter, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../lib/firebase';
 
 export default function LoginScreen() {
   const router = useRouter();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+   try {
+    const userCreds = await signInWithEmailAndPassword(auth,email,password);
+    const user = userCreds.user;
+    Alert.alert("Success","Welcome back!");
+    router.replace("/(tabs)/home");
+   } catch (error) {
+    Alert.alert("Error",error.message);
+   }
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -29,14 +43,14 @@ export default function LoginScreen() {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.replace('/tenant')}
+        onPress={handleLogin}
       >
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
 
       <Text
         style={styles.link}
-        onPress={() => router.push('/register')}
+        onPress={() => router.push('/auth/register')}
       >
         Don't have an account? Register
       </Text>

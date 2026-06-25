@@ -1,32 +1,13 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
+import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
-  const router = useRouter();
-
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>RMT Apartment</Text>
       <Text style={styles.subtitle}>
         Peaceful • Eco-Friendly • Comfortable Living
       </Text>
-
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => router.push('/login')}
-        >
-          <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.button, styles.outline]}
-          onPress={() => router.push('/register')}
-        >
-          <Text style={styles.outlineText}>Register</Text>
-        </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 }

@@ -1,5 +1,7 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useEffect } from 'react';
+import { auth } from '../../lib/firebase';
 
 export default function ToolsScreen() {
   return (
@@ -8,11 +10,11 @@ export default function ToolsScreen() {
 
       <View style={styles.card}>
         <TouchableOpacity style={styles.toolItem}>
-          <Text style={styles.toolText}>🔧 Request Repair</Text>
+          <Text style={styles.toolText}>🔧 Repair Request </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.toolItem}>
-          <Text style={styles.toolText}>📞 Contact Landlord</Text>
+          <Text style={styles.toolText}>📨 Messages</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.toolItem}>
